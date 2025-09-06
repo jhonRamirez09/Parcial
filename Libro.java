@@ -27,4 +27,41 @@ public class Libro {
         return autor;
     }
     public void setAutor(String autor) {
+        this.autor = autor;
+    }
+ 
+ 
+    public int getNumeroEjemplares() {
+        return NumeroEjemplares;
+    }
+ 
+    public void setejemplares(int NumeroEjemplares) {
+        this.NumeroEjemplares = NumeroEjemplares;
+    }
+   
+    public int getNumeroEjemplaresPrestados() {
+        return NumeroEjemplaresPrestados;
+    }
+    public void setNumeroEjemplaresPrestados(int NumeroEjemplaresPrestados) {
+        this.NumeroEjemplaresPrestados = NumeroEjemplaresPrestados;
+    }
+ 
+    boolean prestamo(){
+        if (NumeroEjemplares > NumeroEjemplaresPrestados) {
+            NumeroEjemplaresPrestados = NumeroEjemplaresPrestados + 1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+    boolean devolucion(){
+        if (NumeroEjemplaresPrestados > 0) {
+            NumeroEjemplaresPrestados = NumeroEjemplaresPrestados - 1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+ 
  
